@@ -1,0 +1,19 @@
+<div class="stables"> here is the list of all the stables </div>
+
+
+<% @stables.each do |f|%>
+<ul>
+<% if f.horse%>
+<li><%= f.id %></li>
+
+<li><%= f.horse.name %></li>
+</ul>
+<%else%>
+<h4>availabe stable</h4>
+<ul>
+<li><%= f.id %></li>
+
+
+</ul>
+<%end%>
+<% end%>

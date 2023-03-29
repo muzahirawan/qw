@@ -1,0 +1,14 @@
+<h1>RidingSchool#index</h1>
+<p>Find me in app/views/riding_school/index.html.erb</p>
+<% @coaches.each do |f|%>
+<%= f.name%>
+<%= f.experties%>
+<%= f.fee%>
+<%end%>
+<%= form_for @appointent, url: 'create_appointment' do |form|%>
+ <%= form.datetime_select :appointent_date %>
+ <%= form.label :coach_id %>
+ <%= form.select :coach_id, [['agha',3 ], [ 'hamza',2], [ 'raja',1]], selected: 3 %>
+
+ <%= form.submit%>
+ <%end%>

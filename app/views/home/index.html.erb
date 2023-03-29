@@ -1,0 +1,25 @@
+<h1>Home#index</h1>
+
+<div class="welcome">Welcome to the LAHORE POLO CLUB</div>
+
+<%@appointents.each do |f|%>
+<>
+<ul>
+<p>your appointment with <%= f.coach.name%> has been fixed at  <%= f.appointent_date%></p>
+<p>your next appointment with <%= f.coach.name%> has been fixed at  <%= f.appointent_date + 10.days%></p>
+<li>
+ <li><%= f.coach.name%></li>
+ <li><%= f.user.email%></li>
+</li><%= f.appointent_date%></li>
+<%end%>
+</ul>
+
+
+<% if !user_signed_in?%>
+<%= link_to 'Riding School', ridingschool_path%>
+<%else%>
+<p>login to visit riding school</p>
+<%end%>
+<% if user_signed_in? %>
+<%= button_to 'log out',  destroy_user_session_path, method: :delete%>
+<%end%>

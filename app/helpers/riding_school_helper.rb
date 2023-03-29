@@ -1,0 +1,2 @@
+module RidingSchoolHelper
+end
